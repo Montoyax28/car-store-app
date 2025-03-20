@@ -1,0 +1,77 @@
+<div class="w-full h-7 text-center text-xs pt-2 bg-black">
+  <a
+    href="https://wa.me/6010000000?text=Hola,%20quiero%20más%20información"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button class="text-white">
+      FOR ALL RESERVATIONS, PLEASE CALL OR WRITE TO +57 601 000 0000
+    </button>
+  </a>
+</div>
+<header
+  class="w-full h-24 flex flex-row relative top-0 z-100 justify-center items-center bg-[#e8e8e8] p-2"
+>
+  <button class="group pl-2" (click)="goToWe()">
+    <img
+      class="w-20 object-cover rounded-lg transition-transform duration-300 group-hover:scale-[1.3]"
+      src="../../../../assets/images/baners/monster_tunning_icon.jpg"
+      title="About Us"
+      alt="icon"
+    />
+  </button>
+  <nav class="w-full h-full flex justify-center items-center">
+    <ul class="flex justify-center items-center gap-4">
+      <li>
+        <button (click)="goToHome()">
+          <img
+            src="../../../../assets/images/favicons/home_icon.svg"
+            title="Home"
+            alt="home"
+          />
+        </button>
+      </li>
+      <li>
+        <button (click)="goToTuningCars()">Tuning Cars</button>
+      </li>
+      <li>
+        <button (click)="goToBodyKits()">Body Kits</button>
+      </li>
+      <li>
+        <button (click)="goToParts()">Parts</button>
+      </li>
+      <li>
+        <button (click)="goToDragRacing()">Drag Racing</button>
+      </li>
+    </ul>
+  </nav>
+  <input
+    class="absolute right-36 px-2 rounded-xl"
+    [hidden]="!mostrarInput"
+    type="text"
+    placeholder="Search..."
+  />
+  <div class="flex flex-row gap-5 pr-6">
+    <button (click)="toggleInput()">
+      <img
+        src="../../../../assets/images/favicons/search_icon.svg"
+        title="Search"
+        alt="search"
+      />
+    </button>
+    <button (click)="goToLogin()">
+      <img
+        src="../../../../assets/images/favicons/person_icon.svg"
+        title="Login"
+        alt="person"
+      />
+    </button>
+    <button (click)="goToCart()">
+      <img
+        src="../../../../assets/images/favicons/shopping_cart_checkout_icon.svg"
+        title="Go to cart"
+        alt="cart"
+      />
+    </button>
+  </div>
+</header>

@@ -1,0 +1,20 @@
+<div class="contenedor" *ngIf="car; else loading">
+  <div class="card">
+    <picture class="containerImage">
+      <img [src]="car.image" alt="{{ car.name }}" class="image" />
+    </picture>
+    <div class="containerInfo">
+      <h1 class="text-2xl font-bold">{{ car.name }}</h1>
+      <h1>Parts</h1>
+      <p>{{ car.parts }}</p>
+      <!-- <p class="text-lg">Marca: {{ car.brand }}</p>
+      <p class="text-lg">Modelo: {{ car.model }}</p>
+      <p class="text-lg">Año: {{ car.year }}</p>
+      <p class="text-lg">Precio: ${{ car.price }}</p> -->
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p class="text-lg font-semibold">Cargando información del carro...</p>
+</ng-template>

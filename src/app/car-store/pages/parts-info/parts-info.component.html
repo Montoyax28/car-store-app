@@ -1,0 +1,16 @@
+<div class="contenedor" *ngIf="part; else loading">
+  <div class="card">
+    <picture class="containerImage">
+      <img [src]="part.image" alt="{{ part.name }}" class="image" />
+    </picture>
+    <div class="containerInfo">
+      <h1 class="text-2xl font-bold">{{ part.name }}</h1>
+      <h1>Price: {{ part.price | currency }}</h1>
+      <button class="button" (click)="addToCart(part)">Add To Cart</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p class="text-lg font-semibold">Cargando información ...</p>
+</ng-template>

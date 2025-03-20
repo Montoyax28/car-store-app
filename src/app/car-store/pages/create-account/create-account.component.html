@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="containerForm">
+    <header class="headerForm">
+      <img
+        class="imageLogo"
+        src="../../../../assets/images/baners/monster_tunning_icon.jpg"
+        alt="Baner"
+      />
+    </header>
+    <form action="post" class="form">
+      <span class="seccion">Register</span>
+      <input type="text" name="fullname" id="fullname" placeholder="Fullname" />
+      <input type="email" name="email" id="email" placeholder="Email" />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+      />
+      <button class="button w-full">Create account</button>
+      <span class="text-sm">Or register with</span>
+      <div class="buttonsContainer">
+        <button class="buttonsFoot">
+          <img
+            class="imageBrands"
+            src="../../../../assets/images/favicons/google_icon.png"
+            alt="google_icon"
+          />
+          <span>Google</span>
+        </button>
+        <button class="buttonsFoot">
+          <img
+            class="imageBrands"
+            src="../../../../assets/images/favicons/apple_icon.png"
+            alt="apple_icon"
+          />
+          <span>Apple</span>
+        </button>
+      </div>
+    </form>
+    <div class="loginAccount">
+      <button (click)="goToLogin()">
+        <span>Have any account? <u>Sing in</u></span>
+      </button>
+      <button (click)="goToTermsAndConditions()">
+        <span><u>Terms & Conditions</u></span>
+      </button>
+    </div>
+  </div>
+</div>

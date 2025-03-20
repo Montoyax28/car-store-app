@@ -1,0 +1,230 @@
+<!-- <div class="container">
+  <ng-template *ngIf="!loading; then CONTENT; else LOADING"> </ng-template>
+</div> -->
+
+<!-- <ng-template #CONTENT> -->
+<ng-container class="container">
+  <header class="header">
+    <div class="slide">
+      <img
+        class="banerimage"
+        src="../../../../assets/images/baners/86.jpg"
+        alt="86"
+      />
+    </div>
+    <div class="slide">
+      <img
+        class="banerimage"
+        src="../../../../assets/images/baners/87.jpg"
+        alt="87"
+      />
+    </div>
+    <div class="slide">
+      <img
+        class="banerimage"
+        src="../../../../assets/images/baners/88.jpg"
+        alt="88"
+      />
+    </div>
+    <div class="slide">
+      <img
+        class="banerimage"
+        src="../../../../assets/images/baners/89.jpg"
+        alt="89"
+      />
+    </div>
+  </header>
+  <main class="main">
+    <span> <strong> Featured Products </strong> </span>
+    <div class="featuredProducts">
+      <div
+        class="carousel-track"
+        [ngStyle]="{ transform: 'translateX(' + -indexActual * 100 + '%)' }"
+      >
+        <div class="carousel-item" *ngFor="let producto of productos">
+          <img
+            class="imageCarousel"
+            [src]="producto.image"
+            [alt]="producto.name"
+          />
+          <h3>
+            {{
+              producto.name.length > 20
+                ? (producto.name | slice : 0 : 20) + "..."
+                : producto.name
+            }}
+          </h3>
+          <p>{{ producto.price | currency }}</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="collage">
+      <div class="item item1">
+        <img src="../../../../assets/images/baners/B3.jpg" alt="R1 TITAN" />
+        <div class="overlay">
+          <span class="text-white">TOYOTA SUPRA MK4</span>
+          <a href="#">SHOP NOW ></a>
+        </div>
+      </div>
+      <div class="item item2">
+        <img
+          src="../../../../assets/images/baners/B7.jpg"
+          alt="MONSTER TUNNG PERFORMANCE"
+        />
+        <div class="overlay">
+          <span class="text-white">MONSTER TUNNG COLLECTION</span>
+          <a href="#">VIEW OUR CARS ></a>
+        </div>
+      </div>
+      <div class="item item3">
+        <img
+          src="../../../../assets/images/baners/B5.jpg"
+          alt="DETAILING PRODUCTS"
+        />
+        <div class="overlay">
+          <span class="text-white">NISSAN SKYLINE GT-R</span>
+          <a href="#">SHOP NOW ></a>
+        </div>
+      </div>
+      <div class="item item4">
+        <img
+          src="../../../../assets/images/baners/B12.jpg"
+          alt="VEHICLE SERVICING"
+        />
+        <div class="overlay">
+          <span class="text-white">VEHICLE SERVICING</span>
+          <a href="#">BOOK TODAY ></a>
+        </div>
+      </div>
+      <div class="item item5">
+        <img
+          src="../../../../assets/images/baners/B4.jpg"
+          alt="MONSTER TUNNG EXHAUST SYSTEMS"
+        />
+        <div class="overlay">
+          <span class="text-white">MONSTER TUNNG EXHAUST SYSTEMS</span>
+          <a href="#">SHOP NOW ></a>
+        </div>
+      </div>
+      <div class="item item6">
+        <img
+          src="../../../../assets/images/baners/B10.jpg"
+          alt="AFTERMARKET PARTS"
+        />
+        <div class="overlay">
+          <span class="text-white">AFTERMARKET PARTS & ACCESSORIES</span>
+          <a href="#">SHOP NOW ></a>
+        </div>
+      </div>
+      <div class="item item7">
+        <img src="../../../../assets/images/baners/B6.jpg" alt="NISMO" />
+        <div class="overlay">
+          <span class="text-white">DETAILING PRODUCTS</span>
+          <a href="#">SHOP NOW ></a>
+        </div>
+      </div>
+    </div>
+
+    <span> <strong> Our Brands </strong> </span>
+    <div class="main-logos">
+      <a
+        href="https://autos.honda.com.co/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button class="buttonsMain">
+          <img
+            src="../../../../assets/images/logos/honda-logo.svg"
+            alt="honda"
+          />
+        </button>
+      </a>
+      <a
+        href="https://www.lexus.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button class="buttonsMain">
+          <img
+            src="../../../../assets/images/logos/lexus-logo.png"
+            alt="lexus"
+          />
+        </button>
+      </a>
+      <a
+        href="https://mitsubishi-motors.com.co/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button class="buttonsMain">
+          <img
+            src="../../../../assets/images/logos/mitsubishi-logo.png"
+            alt="mitsubishi"
+          />
+        </button>
+      </a>
+      <a
+        href="https://www.motul.com/es-ES/products"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button class="buttonsMain">
+          <img
+            src="../../../../assets/images/logos/motul_logo.png"
+            alt="motul"
+          />
+        </button>
+      </a>
+      <a
+        href="https://www.rayswheels.co.jp/en/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button class="buttonsMain">
+          <img src="../../../../assets/images/logos/rays_logo.svg" alt="rays" />
+        </button>
+      </a>
+    </div>
+    <div class="main-info">
+      <img
+        class="main-info-item"
+        src="../../../../assets/images/baners/B13.jpg"
+        alt="nissan"
+      />
+      <div class="main-info-item">
+        <span>
+          <strong>
+            Vehicle Servicing, Restoration & Performance Upgrades
+          </strong>
+        </span>
+        <p class="mt-7">
+          Specializing in Japanese and European performance cars focusing on
+          servicing and bolt-on modifications to basic restorations. With a
+          large emphasis on the Nissan GT-R range, we are equipped to look after
+          your car as if it were in a dealership. Our packaged servicing bundles
+          will keep your car running as intended.
+        </p>
+        <p class="mt-5">x_x</p>
+        <p class="mt-5">
+          For all servicing and performance upgrades please call
+          <u>+57 601 000 0000</u>
+          otherwise email us at
+          <a
+            href="mailto:juanmontoyabms@gmail.com?subject=Consulta&body=Hola, quisiera más información."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span><u>juanmontoyabms&#64;gmail.com</u></span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </main>
+</ng-container>
+<!-- </ng-template> -->
+
+<ng-template #LOADING>
+  <h2>Cargando...</h2>
+</ng-template>

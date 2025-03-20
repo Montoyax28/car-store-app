@@ -1,0 +1,241 @@
+<div class="container">
+  <div class="containerForm">
+    <form method="post" class="form">
+      <span><strong>1. Billing information</strong></span>
+      <div class="namesContainer">
+        <input
+          class="names"
+          type="text"
+          name="firstname"
+          id="firstname"
+          placeholder="First name"
+          required
+        />
+        <input
+          class="names"
+          type="text"
+          name="lastname"
+          id="lastname"
+          placeholder="Last name"
+          required
+        />
+      </div>
+      <input
+        type="number"
+        name="id"
+        id="id"
+        placeholder="ID o Passport card"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email"
+        required
+      />
+      <input
+        type="number"
+        name="phoneNumber"
+        id="phoneNumber"
+        placeholder="Phone number"
+        required
+      />
+      <input
+        type="text"
+        name="company"
+        id="company"
+        placeholder="Company name (Optional)"
+      />
+      <input type="text" name="city" id="city" placeholder="City" required />
+      <input
+        type="text"
+        name="address"
+        id="address"
+        placeholder="Address"
+        required
+      />
+      <span><strong>2. Payment details</strong></span>
+
+      <div class="optionCard">
+        <div class="containerRadio">
+          <input
+            class="w-4"
+            type="radio"
+            name="option"
+            [(ngModel)]="selectedOption"
+            value="visa"
+          />
+          <div class="imageContainer">
+            <img
+              src="../../../../assets/images/logos/visa_logo.png"
+              alt="visa"
+            />
+          </div>
+        </div>
+        <div class="containerOption" *ngIf="selectedOption === 'visa'">
+          <input
+            type="number"
+            name="cardNumber"
+            id="cardNumber"
+            placeholder="Card number"
+            required
+          />
+          <input
+            type="text"
+            name="nameOnCard"
+            id="nameOnCard"
+            placeholder="Name on Card"
+            required
+          />
+          <input
+            type="number"
+            name="expiryDate"
+            id="expiryDate"
+            placeholder="Expiry Date(MM/YY)"
+            required
+          />
+          <input
+            type="number"
+            name="securityCode"
+            id="securityCode"
+            placeholder="Security Code(CVN)"
+            required
+          />
+          <span class="text-xs">
+            Would you like us to securely save your payment details for your
+            next visit?
+          </span>
+          <div class="radioOptions">
+            <input
+              type="radio"
+              [(ngModel)]="SavePayment"
+              value="yes"
+              name="yes"
+              id="yes"
+            />
+            <span>Yes</span>
+            <input
+              type="radio"
+              [(ngModel)]="SavePayment"
+              value="no"
+              name="no"
+              id="no"
+            />
+            <span>No</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="optionCard">
+        <div class="containerRadio">
+          <input
+            class="w-4"
+            type="radio"
+            name="option"
+            [(ngModel)]="selectedOption"
+            value="masterCard"
+          />
+          <div class="imageContainer">
+            <img
+              src="../../../../assets/images/logos/mastercard_logo.png"
+              alt="masterCard"
+            />
+          </div>
+        </div>
+        <div class="containerOption" *ngIf="selectedOption === 'masterCard'">
+          <input
+            type="number"
+            name="cardNumber"
+            id="cardNumber"
+            placeholder="Card number"
+            required
+          />
+          <input
+            type="text"
+            name="nameOnCard"
+            id="nameOnCard"
+            placeholder="Name on Card"
+            required
+          />
+          <input
+            type="number"
+            name="expiryDate"
+            id="expiryDate"
+            placeholder="Expiry Date(MM/YY)"
+            required
+          />
+          <input
+            type="number"
+            name="securityCode"
+            id="securityCode"
+            placeholder="Security Code(CVN)"
+            required
+          />
+          <span class="text-xs">
+            Would you like us to securely save your payment details for your
+            next visit?
+          </span>
+          <div class="radioOptions">
+            <input
+              type="radio"
+              [(ngModel)]="SavePayment"
+              value="yes"
+              name="yes"
+              id="yes"
+            />
+            <span>Yes</span>
+            <input
+              type="radio"
+              [(ngModel)]="SavePayment"
+              value="no"
+              name="no"
+              id="no"
+            />
+            <span>No</span>
+          </div>
+        </div>
+      </div>
+      <button class="button">Confirm & Process Order</button>
+    </form>
+  </div>
+  <div class="containerProducts">
+    <header class="headerProducts">
+      <span><strong>Order summary</strong></span>
+      <button (click)="goToCart()">Edit cart</button>
+    </header>
+    <main class="mainProducts" *ngFor="let product of cartItems">
+      <div class="product">
+        <button class="buttonPopup" (click)="openImagePopup(product.image)">
+          <img src="{{ product.image }}" alt="{{ product.name }}" />
+        </button>
+        <span>{{ product.name }}</span>
+        <span>{{ product.price * product.quantity | currency }}</span>
+      </div>
+    </main>
+    <footer class="footerProducts">
+      <div class="prices">
+        <span>Subtotal: </span>
+        <span>{{ getSubtotal() | currency }}</span>
+      </div>
+      <div class="prices">
+        <span>Shipping: </span>
+        <span>{{ shippingCost | currency }}</span>
+      </div>
+      <div class="prices">
+        <span>GST Inc: </span>
+        <span>{{ gstIncCost | currency }}</span>
+      </div>
+      <div class="prices">
+        <span>Total: </span>
+        <span>{{ getTotal() | currency }}</span>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<div class="popup-overlay" *ngIf="selectedImage" (click)="closeImagePopup()">
+  <div class="popup-content">
+    <img [src]="selectedImage" class="popup-image" />
+  </div>
+</div>

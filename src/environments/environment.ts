@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'https://run.mocky.io/v3/bc323252-ce7f-44c1-83a8-b727a11a4538',
+};
+
+export const enviromentBodyKits = {
+  production: false,
+  baseUrl: 'https://run.mocky.io/v3/195c2ee1-f837-4206-b35f-f0fa8eb677e7',
+};
+
+export const enviromentParts = {
+  production: false,
+  baseUrl: 'https://run.mocky.io/v3/dce4aa1d-6814-4779-b6b6-6ca5c33b1703',
 };
 
 /*

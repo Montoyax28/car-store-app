@@ -1,0 +1,71 @@
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.banner {
+  display: flex;
+  width: 100%;
+  height: 254px;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.imageBanner {
+  border-radius: 0;
+}
+
+.titleBanner {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: xxx-large;
+  background-color: #bababa86;
+  z-index: 5;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0px;
+  gap: 28px;
+}
+
+.containerCar{
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.buttonCar{
+  width: 100%;
+  border-radius: 12px;
+  z-index: 10;
+}
+
+

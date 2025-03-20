@@ -1,0 +1,89 @@
+<header class="banner">
+  <div class="slide">
+    <img
+      class="imageBanner"
+      src="../../../../assets/images/baners/C5.jpg"
+      alt="banner"
+    />
+  </div>
+
+  <div class="titleBanner">
+    <span class="text-white">Contact Us</span>
+  </div>
+</header>
+<main class="container">
+  <span class="text-3xl"> <strong> Monster Tunng </strong> </span>
+  <div class="containerText">
+    <span class="text"> <strong> NIT: 601 000 000 </strong> </span>
+    <span class="text">Av. Boyacá #80-94</span>
+    <span class="text">Bogotá, Colombia</span>
+    <br />
+    <span class="text"> +57 601 000 0000 </span>
+    <span class="text"> juanmontoyabms&#64;gmail.com </span>
+    <br />
+    <span class="text"> <strong> Showroom/Workshop Hours: </strong> </span>
+    <span class="text">Monday to Friday: 8:30 AM to 5:00 PM</span>
+    <span class="text">Saturday and Sunday: CLOSED</span>
+    <span class="text">
+      *Closed on public holidays unless otherwise specified.
+    </span>
+  </div>
+  <hr />
+  <div class="formContainer">
+    <span class="text-3xl"> <strong> Email Enquiry Form </strong> </span>
+    <form class="form" action="post" method="post" id="form">
+      <div class="formOption">
+        <span>First Name</span>
+        <input
+          type="text"
+          name="firstName"
+          id="firstName"
+          placeholder="First Name"
+        />
+      </div>
+      <div class="formOption">
+        <span>Surname</span>
+        <input type="text" name="surName" id="surName" placeholder="Surname" />
+      </div>
+      <div class="formOption">
+        <span>Contact Phone Number</span>
+        <input
+          type="number"
+          name="contactPhoneNumber"
+          id="contactPhoneNumber"
+          placeholder="Contact Phone Number"
+        />
+      </div>
+      <div class="formOption">
+        <span>Email</span>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email Address"
+        />
+      </div>
+      <div class="formOption">
+        <span>Preferred Method of Contact</span>
+        <select
+          class="rounded-lg pl-2"
+          [(ngModel)]="seleccionado"
+          name="contactTipe"
+        >
+          <option *ngFor="let opcion of opciones" [value]="opcion">
+            {{ opcion }}
+          </option>
+        </select>
+      </div>
+      <div class="formOption">
+        <span>Message</span>
+        <textarea
+          class="h-28 resize-none rounded-lg px-2"
+          name="message"
+          id="message"
+        ></textarea>
+      </div>
+      <button class="buttonForm">Send Email</button>
+    </form>
+  </div>
+</main>

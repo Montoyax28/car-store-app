@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="containerForm">
+    <header class="headerForm">
+      <img
+        class="imageLogo"
+        src="../../../../assets/images/baners/monster_tunning_icon.jpg"
+        alt="Baner"
+      />
+    </header>
+    <form action="post" class="form">
+      <span class="seccion">Login</span>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        id="email"
+        placeholder="Email"
+      />
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+      />
+      <button class="button w-full" (click)="login()">Join</button>
+      <span class="text-sm">Or login with</span>
+      <div class="buttonsContainer">
+        <button class="buttonsFoot">
+          <img
+            class="imageBrands"
+            src="../../../../assets/images/favicons/google_icon.png"
+            alt="google_icon"
+          />
+          <span>Google</span>
+        </button>
+        <button class="buttonsFoot">
+          <img
+            class="imageBrands"
+            src="../../../../assets/images/favicons/apple_icon.png"
+            alt="apple_icon"
+          />
+          <span>Apple</span>
+        </button>
+      </div>
+    </form>
+    <div class="createAccount">
+      <button (click)="goToCreateAccount()">
+        <span>Don't have an account? <u>Register</u></span>
+      </button>
+      <button (click)="goToTermsAndConditions()">
+        <span><u>Terms & Conditions</u></span>
+      </button>
+    </div>
+  </div>
+</div>

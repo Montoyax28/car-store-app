@@ -1,0 +1,38 @@
+<div>
+  <div class="w-full h-full flex flex-wrap justify-center items-center gap-5">
+    <ng-template *ngIf="!loading; then BANNER; else LOADING"> </ng-template>
+  </div>
+  <div
+    class="w-full h-full flex flex-wrap justify-center items-center gap-5 p-10"
+  >
+    <ng-template *ngIf="!loading; then CONTENT; else LOADING"> </ng-template>
+  </div>
+</div>
+
+<ng-template #BANNER>
+  <ng-container>
+    <header class="banner">
+      <div class="slide">
+        <img
+          class="imageBanner"
+          src="../../../../assets/images/baners/C3.jpg"
+          alt="banner"
+        />
+      </div>
+
+      <div class="titleBanner">
+        <span class="text-white">Body Kits</span>
+      </div>
+    </header>
+  </ng-container>
+</ng-template>
+
+<ng-template #CONTENT>
+  <ng-container *ngFor="let item of bodyKits">
+    <app-bodykit-card [bodyKit]="item"></app-bodykit-card>
+  </ng-container>
+</ng-template>
+
+<ng-template #LOADING>
+  <h2>Cargando...</h2>
+</ng-template>
