@@ -50,7 +50,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin: 50px auto;
   gap: 40px;
 }
 
@@ -94,7 +94,7 @@ img {
 .collage {
   width: 90%;
   display: grid;
-  margin-top: 50px;
+  margin: 50px auto;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 200px);
   gap: 5px;
@@ -173,7 +173,7 @@ a {
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin: 50px auto;
   gap: 50px;
 }
 

@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
+
+  isPopUpVisible: boolean = false;
+  isPopUpTwoVisible: boolean = false;
+
   constructor(private router: Router) {}
 
   goToCart() {
@@ -32,4 +36,21 @@ export class FooterComponent {
   goToContactUs() {
     this.router.navigate(['/store/contactUs']);
   }
+
+  openPopUp() {
+    this.isPopUpVisible = true;
+  }
+
+  closePopUp() {
+    this.isPopUpVisible = false;
+  }
+
+  openPopUpTwo() {
+    this.isPopUpTwoVisible = true;
+  }
+
+  closePopUpTwo() {
+    this.isPopUpTwoVisible = false;
+  }
+
 }

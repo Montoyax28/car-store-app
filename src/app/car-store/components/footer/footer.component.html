@@ -62,9 +62,11 @@
         <input type="radio" name="radio" id="radio" />
         <span>
           I have read & agree to
-          <strong>Terms & Conditions</strong>
+          <button (click)="openPopUp()"> <strong>Terms & Conditions</strong> </button>
           &
-          <strong>Privacy Policy</strong>.
+          <button (click)="openPopUpTwo()"> <strong>Privacy Policy</strong> </button>
+
+
         </span>
       </div>
     </div>
@@ -74,3 +76,145 @@
     <span class="Copyright">NIT: 601 000 000</span>
   </div>
 </footer>
+
+<div class="popUp-overlay" *ngIf="isPopUpVisible" (click)="closePopUp()"></div>
+<div class="popUp-overlay" *ngIf="isPopUpTwoVisible" (click)="closePopUpTwo()"></div>
+
+<div class="popUp" *ngIf="isPopUpVisible">
+  <div class="popUp-content">
+    <span> <strong> Monster Tunng </strong> Terms and Conditions </span>
+    <ol>
+      <li>
+        <span>1. Introduction</span>
+        <p>
+          Welcome to <strong>Monster Tunng</strong>. By accessing and using our
+          website and services, you agree to abide by the following terms and
+          conditions. We encourage you to read this document carefully before
+          making any purchases.
+        </p>
+      </li>
+      <li>
+        <span>2. Definitions</span>
+        <ul>
+          <li>
+            ⇝ "Customer": any person who purchases products or services in our
+            store.
+          </li>
+          <li>⇝ "Products": cars and tuning parts available for sale.</li>
+          <li>
+            ⇝ "Store": <strong>Monster Tunng</strong>, responsible for the sale
+            and distribution of products.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span>3. Products and Services</span>
+        <p>
+          We offer high-quality tuning vehicles and parts. The images and
+          product descriptions in our store are illustrative and may vary
+          slightly from the actual product.
+        </p>
+      </li>
+      <li>
+        <span>4. Prices and Payments</span>
+        <ul>
+          <li>
+            ⇝ All prices are in Colombian pesos and include applicable taxes,
+            unless otherwise indicated.
+          </li>
+          <li>⇝ We accept payments via bank transfer or cash.</li>
+          <li>
+            ⇝ We reserve the right to change prices at any time without prior
+            notice.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span>5. Shipping and Delivery</span>
+        <ul>
+          <li>⇝ We offer free shipping to all of Colombia.</li>
+          <li>
+            ⇝ Delivery times may vary depending on product availability and
+            customer location.
+          </li>
+          <li>⇝ We are not responsible for delays caused by third parties.</li>
+        </ul>
+      </li>
+      <li>
+        <span>6. Warranty and Returns</span>
+        <ul>
+          <li>
+            ⇝ All products come with a 1-year warranty against manufacturing
+            defects.
+          </li>
+          <li>
+            ⇝ Returns are not accepted for modifications or damage caused by
+            improper use.
+          </li>
+          <li>
+            ⇝ To request a refund, the customer must contact our customer
+            service team within 10 days of purchase.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span>7. Responsibility</span>
+        <ul>
+          <li>
+            ⇝ We are not responsible for damages resulting from improper use of
+            the products.
+          </li>
+          <li>
+            ⇝ Tuning parts must be installed by a professional to avoid
+            inconvenience.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span>8. Privacy and Data Protection</span>
+        <ul>
+          <li>
+            ⇝ We respect our customers' privacy and protect their personal data
+            in accordance with current legislation.
+          </li>
+          <li>
+            ⇝ We do not share personal information with third parties without
+            the customer's consent.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span>9. Modifications to the Terms and Conditions</span>
+        <p>
+          We reserve the right to modify these terms and conditions at any time.
+          Modifications will take effect immediately upon posting on our
+          website.
+        </p>
+      </li>
+      <li>
+        <span>10. Contact</span>
+        <p>
+          For any questions, please contact us at +57 601 000 0000. Thank you
+          for trusting <strong>Monster Tunng</strong>.
+        </p>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="popUp" *ngIf="isPopUpTwoVisible">
+  <div class="popUp-content">
+    <span> <strong> Monster Tunng </strong> Terms and Conditions </span>
+    <ol>
+      <li>
+        <span>1. Introduction</span>
+        <p>
+          Welcome to <strong>Monster Tunng</strong>. By accessing and using our
+          website and services, you agree to abide by the following terms and
+          conditions. We encourage you to read this document carefully before
+          making any purchases.
+        </p>
+      </li>
+    </ol>
+  </div>
+</div>

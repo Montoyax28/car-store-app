@@ -14,19 +14,19 @@ export class DragRacingInfoComponent implements OnInit {
 
   videoCategories: { [key: string]: string[] } = {
     toyotaSupra: [
-      'https://www.youtube.com/embed/2iaun9R7U3A?autoplay=1&controls=0&rel=0',
-      'https://www.youtube.com/embed/VIDEO_ID_2?autoplay=1&mute=1&controls=0&rel=0',
-      'https://www.youtube.com/embed/VIDEO_ID_3?autoplay=1&mute=1&controls=0&rel=0',
+      'https://www.youtube.com/embed/thgNDespy1Q?autoplay=1&controls=0&rel=0',
+      'https://www.youtube.com/embed/A7YMjWl77Ek?autoplay=1&controls=0&rel=0',
+      'https://www.youtube.com/embed/HMEz0g8bA_A?autoplay=1&controls=0&rel=0',
     ],
     nissanSkyline: [
-      'https://www.youtube.com/embed/VIDEO_ID_4?autoplay=1&mute=1&controls=0&rel=0',
-      'https://www.youtube.com/embed/VIDEO_ID_5?autoplay=1&mute=1&controls=0&rel=0',
-      'https://www.youtube.com/embed/VIDEO_ID_6?autoplay=1&mute=1&controls=0&rel=0',
+      'https://www.youtube.com/embed/SJPWkdduwEc?autoplay=1&controls=0&rel=0',
+      'https://www.youtube.com/embed/QZb7Gra8hc4?autoplay=1&controls=0&rel=0',
+      'https://www.youtube.com/embed/Lz6AAvsw-O4?autoplay=1&controls=0&rel=0',
     ],
     mitsubishiLancer: [
-      'https://www.youtube.com/embed/VIDEO_ID_7?autoplay=1&mute=1&controls=0',
-      'https://www.youtube.com/embed/VIDEO_ID_8?autoplay=1&mute=1&controls=0',
-      'https://www.youtube.com/embed/VIDEO_ID_9?autoplay=1&mute=1&controls=0',
+      'https://www.youtube.com/embed/_F94sD3IGG0?autoplay=1&controls=0',
+      'https://www.youtube.com/embed/s_jsx_Mv6EA?autoplay=1&controls=0',
+      'https://www.youtube.com/embed/8mIchwGyIO4?autoplay=1&controls=0',
     ],
   };
 
