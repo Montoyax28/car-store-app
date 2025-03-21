@@ -43,6 +43,10 @@ export class NavbarComponent {
     this.router.navigate(['/store/dragRacing']);
   }
 
+  goToSettings() {
+    this.router.navigate(['/store/settings']);
+  }
+
   toggleInput() {
     this.mostrarInput = !this.mostrarInput;
   }

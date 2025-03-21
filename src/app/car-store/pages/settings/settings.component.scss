@@ -1,0 +1,107 @@
+
+/* Contenedor Principal */
+.settings-container {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  border-radius: 12px;
+}
+
+/* Barra lateral */
+.sidebar {
+  width: 250px;
+  background: #e8e8e8;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar ul li:hover {
+  background-color: #b9b9b9;
+  transform: translateX(5px);
+}
+
+/* Contenido */
+.content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Secciones de configuración */
+.settings-section {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+/* Inputs y botones */
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #BDC3C7;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #3498DB;
+}
+
+/* Botón de guardar */
+.btn-save {
+  width: 100%;
+  padding: 10px;
+  background-color:#b0b0b0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-save:hover {
+  background-color: #b9b9b9;
+  transform: scale(1.05);
+}
+
+/* Checkbox personalizado */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}

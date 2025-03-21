@@ -1,0 +1,65 @@
+<div class="settings-container">
+  <aside class="sidebar">
+    <h2>Options</h2>
+    <ul>
+      <li (click)="showSection('seguridad')">Seguridad</li>
+      <li (click)="showSection('notificaciones')">Notificaciones</li>
+      <li (click)="showSection('pagos')">Métodos de Pago</li>
+      <li (click)="showSection('privacidad')">Privacidad</li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <section *ngIf="activeSection === 'seguridad'" class="settings-section">
+      <h2>Seguridad</h2>
+      <div class="input-group">
+        <label>Nueva Contraseña</label>
+        <input type="password" />
+      </div>
+      <div class="input-group">
+        <label>Confirmar Contraseña</label>
+        <input type="password" />
+      </div>
+      <button class="btn-save">Actualizar Contraseña</button>
+    </section>
+
+    <section
+      *ngIf="activeSection === 'notificaciones'"
+      class="settings-section"
+    >
+      <h2>Notificaciones</h2>
+      <div class="checkbox-group">
+        <input type="checkbox" id="promo" class="w-0" />
+        <label for="promo">Recibir correos promocionales</label>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="security" class="w-0" />
+        <label for="security">Alertas de seguridad</label>
+      </div>
+      <button class="btn-save">Guardar Preferencias</button>
+    </section>
+
+    <section *ngIf="activeSection === 'pagos'" class="settings-section">
+      <h2>Métodos de Pago</h2>
+      <div class="input-group">
+        <label>Método Predeterminado</label>
+        <select>
+          <option>Visa</option>
+          <option>PayPal</option>
+          <option>MasterCard</option>
+        </select>
+      </div>
+      <button class="btn-save">Actualizar Método</button>
+    </section>
+
+    <section *ngIf="activeSection === 'privacidad'" class="settings-section">
+      <h2>Privacidad</h2>
+      <p>Controla tu privacidad y los datos compartidos.</p>
+      <div class="checkbox-group">
+        <input type="checkbox" id="tracking" />
+        <label for="tracking">Permitir seguimiento de actividad</label>
+      </div>
+      <button class="btn-save">Guardar Configuración</button>
+    </section>
+  </main>
+</div>
