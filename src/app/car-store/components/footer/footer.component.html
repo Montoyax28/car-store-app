@@ -51,7 +51,10 @@
     <div class="buttonsService">
       <span> <strong> Information </strong> </span>
       <button class="buttonsCopyright" (click)="goToTermsAndConditions()">
-        Privacy Policy
+        Terms & Conditions
+      </button>
+      <button class="buttonsCopyright" (click)="goToPrivacyPolicy()">
+        Privacy & Policy
       </button>
     </div>
     <div class="buttonsService">
@@ -62,11 +65,13 @@
         <input type="radio" name="radio" id="radio" />
         <span>
           I have read & agree to
-          <button (click)="openPopUp()"> <strong>Terms & Conditions</strong> </button>
+          <button (click)="openPopUp()">
+            <strong>Terms & Conditions</strong>
+          </button>
           &
-          <button (click)="openPopUpTwo()"> <strong>Privacy Policy</strong> </button>
-
-
+          <button (click)="openPopUpTwo()">
+            <strong>Privacy Policy</strong>
+          </button>
         </span>
       </div>
     </div>
@@ -78,7 +83,11 @@
 </footer>
 
 <div class="popUp-overlay" *ngIf="isPopUpVisible" (click)="closePopUp()"></div>
-<div class="popUp-overlay" *ngIf="isPopUpTwoVisible" (click)="closePopUpTwo()"></div>
+<div
+  class="popUp-overlay"
+  *ngIf="isPopUpTwoVisible"
+  (click)="closePopUpTwo()"
+></div>
 
 <div class="popUp" *ngIf="isPopUpVisible">
   <div class="popUp-content">
@@ -204,15 +213,92 @@
 
 <div class="popUp" *ngIf="isPopUpTwoVisible">
   <div class="popUp-content">
-    <span> <strong> Monster Tunng </strong> Terms and Conditions </span>
+    <span> <strong>Monster Tunng</strong> Privacy & Policy </span>
     <ol>
       <li>
         <span>1. Introduction</span>
         <p>
-          Welcome to <strong>Monster Tunng</strong>. By accessing and using our
-          website and services, you agree to abide by the following terms and
-          conditions. We encourage you to read this document carefully before
-          making any purchases.
+          At <strong>Monster Tunng</strong>, we value your privacy and are
+          committed to protecting your personal data. This policy explains how
+          we collect, use, and safeguard your information when you interact with
+          our website and services.
+        </p>
+      </li>
+      <li>
+        <span>2. Information We Collect</span>
+        <ul>
+          <li>
+            ⇝ Personal information: name, phone number, email, and billing
+            address.
+          </li>
+          <li>
+            ⇝ Payment details: collected and processed securely through trusted
+            third-party providers.
+          </li>
+          <li>
+            ⇝ Usage data: interactions with our website, such as pages visited
+            and time spent on each section.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span>3. How We Use Your Information</span>
+        <p>
+          We use your information to provide and improve our services, including
+          order processing, customer support, and marketing communications.
+        </p>
+      </li>
+      <li>
+        <span>4. Data Protection</span>
+        <ul>
+          <li>
+            ⇝ We implement security measures to prevent unauthorized access or
+            disclosure.
+          </li>
+          <li>
+            ⇝ Your data is stored securely and only accessed by authorized
+            personnel.
+          </li>
+          <li>
+            ⇝ We do not sell or share your personal information with third
+            parties without your consent.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span>5. Cookies and Tracking Technologies</span>
+        <ul>
+          <li>⇝ We use cookies to enhance your browsing experience.</li>
+          <li>
+            ⇝ You can manage or disable cookies through your browser settings.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span>6. Your Rights</span>
+        <ul>
+          <li>
+            ⇝ You have the right to access, modify, or delete your personal
+            data.
+          </li>
+          <li>⇝ You may opt out of marketing communications at any time.</li>
+          <li>
+            ⇝ To exercise your rights, contact us through the provided channels.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span>7. Changes to This Policy</span>
+        <p>
+          We reserve the right to modify this privacy policy at any time.
+          Updates will be posted on our website and take effect immediately.
+        </p>
+      </li>
+      <li>
+        <span>8. Contact</span>
+        <p>
+          If you have any questions, please contact us at +57 601 000 0000.
+          Thank you for trusting <strong>Monster Tunng</strong>.
         </p>
       </li>
     </ol>

@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-
   isPopUpVisible: boolean = false;
   isPopUpTwoVisible: boolean = false;
 
@@ -37,6 +36,10 @@ export class FooterComponent {
     this.router.navigate(['/store/contactUs']);
   }
 
+  goToPrivacyPolicy() {
+    this.router.navigate(['/store/privacyPolicy']);
+  }
+
   openPopUp() {
     this.isPopUpVisible = true;
   }
@@ -52,5 +55,4 @@ export class FooterComponent {
   closePopUpTwo() {
     this.isPopUpTwoVisible = false;
   }
-
 }

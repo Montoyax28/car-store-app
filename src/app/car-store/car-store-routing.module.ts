@@ -120,6 +120,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'privacyPolicy',
+        loadChildren: () =>
+          import('./pages/privacy-policy/privacy-policy.module').then(
+            (m) => m.PrivacyPolicyModule
+          ),
+      },
+      {
         path: '**',
         redirectTo: 'home',
       },
