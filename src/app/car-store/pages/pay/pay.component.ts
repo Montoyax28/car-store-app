@@ -12,6 +12,8 @@ export class PayComponent implements OnInit {
   selectedOption: string = '';
   SavePayment: string = '';
 
+  loading = true;
+
   gstIncCost: number = 965953;
   shippingCost: number = 30000;
 
@@ -23,6 +25,7 @@ export class PayComponent implements OnInit {
   ngOnInit() {
     this.cartS.getCart().subscribe((items) => {
       this.cartItems = items;
+      this.loading = false;
     });
   }
 

@@ -15,6 +15,8 @@ export class CartComponent {
 
   isCartEmpty = true; //
 
+  loading = true;
+
   constructor(
     private cartService: CartService,
     private router: Router,
@@ -23,10 +25,12 @@ export class CartComponent {
 
   ngOnInit() {
     this.cartService.getCart().subscribe((items) => {
+      this.loading = false;
       this.cartItems = items;
     });
 
     this.cartService.isCartEmpty$.subscribe((empty) => {
+      this.loading = false;
       this.isCartEmpty = empty;
     });
   }

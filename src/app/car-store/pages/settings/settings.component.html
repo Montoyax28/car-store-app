@@ -1,65 +1,86 @@
-<div class="settings-container">
-  <aside class="sidebar">
-    <h2>Options</h2>
-    <ul>
-      <li (click)="showSection('seguridad')">Seguridad</li>
-      <li (click)="showSection('notificaciones')">Notificaciones</li>
-      <li (click)="showSection('pagos')">Métodos de Pago</li>
-      <li (click)="showSection('privacidad')">Privacidad</li>
-    </ul>
-  </aside>
+<div>
+  <ng-container *ngIf="loading; else SHOW_CONTENT">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+      <div
+        class="w-20 h-20 border-8 border-gray-300 border-t-black rounded-full animate-spin"
+      ></div>
+      <p class="mt-4 text-lg font-semibold text-gray-700">Loading...</p>
+    </div>
+  </ng-container>
 
-  <main class="content">
-    <section *ngIf="activeSection === 'seguridad'" class="settings-section">
-      <h2>Seguridad</h2>
-      <div class="input-group">
-        <label>Nueva Contraseña</label>
-        <input type="password" />
-      </div>
-      <div class="input-group">
-        <label>Confirmar Contraseña</label>
-        <input type="password" />
-      </div>
-      <button class="btn-save">Actualizar Contraseña</button>
-    </section>
-
-    <section
-      *ngIf="activeSection === 'notificaciones'"
-      class="settings-section"
+  <ng-template #SHOW_CONTENT>
+    <div
+      class="w-full h-full flex flex-wrap justify-center items-center gap-5 p-10"
     >
-      <h2>Notificaciones</h2>
-      <div class="checkbox-group">
-        <input type="checkbox" id="promo" class="w-0" />
-        <label for="promo">Recibir correos promocionales</label>
-      </div>
-      <div class="checkbox-group">
-        <input type="checkbox" id="security" class="w-0" />
-        <label for="security">Alertas de seguridad</label>
-      </div>
-      <button class="btn-save">Guardar Preferencias</button>
-    </section>
-
-    <section *ngIf="activeSection === 'pagos'" class="settings-section">
-      <h2>Métodos de Pago</h2>
-      <div class="input-group">
-        <label>Método Predeterminado</label>
-        <select>
-          <option>Visa</option>
-          <option>PayPal</option>
-          <option>MasterCard</option>
-        </select>
-      </div>
-      <button class="btn-save">Actualizar Método</button>
-    </section>
-
-    <section *ngIf="activeSection === 'privacidad'" class="settings-section">
-      <h2>Privacidad</h2>
-      <p>Controla tu privacidad y los datos compartidos.</p>
-      <div class="checkbox-group">
-        <input type="checkbox" id="tracking" />
-        <label for="tracking">Permitir seguimiento de actividad</label>
-      </div>
-      <button class="btn-save">Guardar Configuración</button>
-    </section>
-  </main>
+      <ng-template [ngTemplateOutlet]="CONTENT"></ng-template>
+    </div>
+  </ng-template>
 </div>
+
+<ng-template #CONTENT>
+  <ng-container class="settings-container">
+    <aside class="sidebar">
+      <h2>Options</h2>
+      <ul>
+        <li (click)="showSection('seguridad')">Seguridad</li>
+        <li (click)="showSection('notificaciones')">Notificaciones</li>
+        <li (click)="showSection('pagos')">Métodos de Pago</li>
+        <li (click)="showSection('privacidad')">Privacidad</li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <section *ngIf="activeSection === 'seguridad'" class="settings-section">
+        <h2>Seguridad</h2>
+        <div class="input-group">
+          <label>Nueva Contraseña</label>
+          <input type="password" />
+        </div>
+        <div class="input-group">
+          <label>Confirmar Contraseña</label>
+          <input type="password" />
+        </div>
+        <button class="btn-save">Actualizar Contraseña</button>
+      </section>
+
+      <section
+        *ngIf="activeSection === 'notificaciones'"
+        class="settings-section"
+      >
+        <h2>Notificaciones</h2>
+        <div class="checkbox-group">
+          <input type="checkbox" id="promo" class="w-0" />
+          <label for="promo">Recibir correos promocionales</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="security" class="w-0" />
+          <label for="security">Alertas de seguridad</label>
+        </div>
+        <button class="btn-save">Guardar Preferencias</button>
+      </section>
+
+      <section *ngIf="activeSection === 'pagos'" class="settings-section">
+        <h2>Métodos de Pago</h2>
+        <div class="input-group">
+          <label>Método Predeterminado</label>
+          <select>
+            <option>Visa</option>
+            <option>PayPal</option>
+            <option>MasterCard</option>
+          </select>
+        </div>
+        <button class="btn-save">Actualizar Método</button>
+      </section>
+
+      <section *ngIf="activeSection === 'privacidad'" class="settings-section">
+        <h2>Privacidad</h2>
+        <p>Controla tu privacidad y los datos compartidos.</p>
+        <div class="checkbox-group">
+          <input type="checkbox" id="tracking" />
+          <label for="tracking">Permitir seguimiento de actividad</label>
+        </div>
+        <button class="btn-save">Guardar Configuración</button>
+      </section>
+    </main>
+  </ng-container>
+</ng-template>

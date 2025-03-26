@@ -134,6 +134,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'projectInformation',
+        loadChildren: () =>
+          import('./pages/project-information/project-information.module').then(
+            (m) => m.ProjectInformationModule
+          ),
+      },
+      {
         path: '**',
         redirectTo: 'home',
       },

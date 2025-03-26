@@ -1,12 +1,24 @@
 <div>
-  <div class="w-full h-full flex flex-wrap justify-center items-center gap-5">
-    <ng-template *ngIf="!loading; then BANNER; else LOADING"> </ng-template>
-  </div>
-  <div
-    class="w-full h-full flex flex-wrap justify-center items-center gap-5 p-10"
-  >
-    <ng-template *ngIf="!loading; then CONTENT; else LOADING"> </ng-template>
-  </div>
+  <ng-container *ngIf="loading; else SHOW_CONTENT">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+      <div
+        class="w-20 h-20 border-8 border-gray-300 border-t-black rounded-full animate-spin"
+      ></div>
+      <p class="mt-4 text-lg font-semibold text-gray-700">Loading...</p>
+    </div>
+  </ng-container>
+
+  <ng-template #SHOW_CONTENT>
+    <div class="w-full h-full flex flex-wrap justify-center items-center gap-5">
+      <ng-template [ngTemplateOutlet]="BANNER"></ng-template>
+    </div>
+
+    <div
+      class="w-full h-full flex flex-wrap justify-center items-center gap-5 p-10"
+    >
+      <ng-template [ngTemplateOutlet]="CONTENT"></ng-template>
+    </div>
+  </ng-template>
 </div>
 
 <ng-template #BANNER>
@@ -31,8 +43,4 @@
   <ng-container *ngFor="let item of bodyKits">
     <app-bodykit-card [bodyKit]="item"></app-bodykit-card>
   </ng-container>
-</ng-template>
-
-<ng-template #LOADING>
-  <h2>Cargando...</h2>
 </ng-template>

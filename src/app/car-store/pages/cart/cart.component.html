@@ -1,74 +1,99 @@
-<div class="container">
-  <table class="table">
-    <thead class="header">
-      <tr class="p-2">
-        <td>Product</td>
-        <td>Name</td>
-        <td>ID</td>
-        <td>Amount</td>
-        <td>Price</td>
-        <td>Options</td>
-      </tr>
-    </thead>
-    <tbody class="content" *ngFor="let product of cartItems">
-      <tr class="flex items-center py-3">
-        <td>
-          <button class="buttonPopup" (click)="openImagePopup(product.image)">
-            <img src="{{ product.image }}" alt="{{ product.name }}" />
-          </button>
-        </td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.id }}</td>
-        <td>
-          <input
-            type="number"
-            [(ngModel)]="product.quantity"
-            min="1"
-            max="100"
-            (change)="updateQuantity(product)"
-          />
-        </td>
-        <td>{{ product.price * product.quantity | currency }}</td>
-        <td>
-          <button (click)="removeFromCart(product.id)">
-            <img
-              src="../../../../assets/images/favicons/remove_shopping_cart_icon.svg"
-              title="Remove Product"
-              alt="Remove"
-            />
-          </button>
-          <button (click)="goToProductInfo(product)">
-            <img
-              src="../../../../assets/images/favicons/open_in_full_icon.svg"
-              title="Product Detail"
-              alt="View product"
-            />
-          </button>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr class="mt-3 gap-4">
-        <td class="buttonContainerPay">
-          <button
-            class="buttonPay"
-            [disabled]="isCartEmpty"
-            (click)="goToPay()"
-            title="Go to pay"
-          >
-            Pay
-          </button>
-        </td>
-        <td class="bg-[#e8e8e8] py-1 rounded-xl">
-          Total: {{ getTotal() | currency }}
-        </td>
-      </tr>
-    </tfoot>
-  </table>
+<div>
+  <ng-container *ngIf="loading; else SHOW_CONTENT">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+      <div
+        class="w-20 h-20 border-8 border-gray-300 border-t-black rounded-full animate-spin"
+      ></div>
+      <p class="mt-4 text-lg font-semibold text-gray-700">Loading...</p>
+    </div>
+  </ng-container>
+
+  <ng-template #SHOW_CONTENT>
+    <div
+      class="w-full h-full flex flex-wrap justify-center items-center gap-5 p-10"
+    >
+      <ng-template [ngTemplateOutlet]="CONTENT"></ng-template>
+    </div>
+  </ng-template>
 </div>
 
-<div class="popup-overlay" *ngIf="selectedImage" (click)="closeImagePopup()">
-  <div class="popup-content">
-    <img [src]="selectedImage" class="popup-image" />
-  </div>
-</div>
+<ng-template #CONTENT>
+  <ng-container class="contenedor">
+    <table class="table">
+      <thead class="header">
+        <tr class="p-2">
+          <td>Product</td>
+          <td>Name</td>
+          <td>ID</td>
+          <td>Amount</td>
+          <td>Price</td>
+          <td>Options</td>
+        </tr>
+      </thead>
+      <tbody class="content" *ngFor="let product of cartItems">
+        <tr class="flex items-center py-3">
+          <td>
+            <button class="buttonPopup" (click)="openImagePopup(product.image)">
+              <img src="{{ product.image }}" alt="{{ product.name }}" />
+            </button>
+          </td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.id }}</td>
+          <td>
+            <input
+              type="number"
+              [(ngModel)]="product.quantity"
+              min="1"
+              max="100"
+              (change)="updateQuantity(product)"
+            />
+          </td>
+          <td>{{ product.price * product.quantity | currency }}</td>
+          <td>
+            <button (click)="removeFromCart(product.id)">
+              <img
+                src="../../../../assets/images/favicons/remove_shopping_cart_icon.svg"
+                title="Remove Product"
+                alt="Remove"
+              />
+            </button>
+            <button (click)="goToProductInfo(product)">
+              <img
+                src="../../../../assets/images/favicons/open_in_full_icon.svg"
+                title="Product Detail"
+                alt="View product"
+              />
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="mt-3 gap-4">
+          <td class="buttonContainerPay">
+            <button
+              class="buttonPay"
+              [disabled]="isCartEmpty"
+              (click)="goToPay()"
+              title="Go to pay"
+            >
+              Pay
+            </button>
+          </td>
+          <td class="bg-[#e8e8e8] py-1 rounded-xl">
+            Total: {{ getTotal() | currency }}
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div
+      class="popup-overlay"
+      *ngIf="selectedImage"
+      (click)="closeImagePopup()"
+    >
+      <div class="popup-content">
+        <img [src]="selectedImage" class="popup-image" />
+      </div>
+    </div>
+  </ng-container>
+</ng-template>

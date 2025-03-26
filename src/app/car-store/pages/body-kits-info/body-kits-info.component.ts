@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { BodyKitService } from '../../services/body-kit.service';
 import { CartService } from '../../services/cart.service';
-import { CartItem } from '../../interfaces/cart.interfaces';
 import { NotifierService } from '../../services/notifier.service';
 
 @Component({
@@ -14,8 +13,7 @@ import { NotifierService } from '../../services/notifier.service';
 })
 export class BodyKitsInfoComponent implements OnInit, OnDestroy {
   bodyKit?: bodyKit;
-
-  loading = true;
+  loading = true; // Inicia en true para mostrar la animación de carga
 
   private sub0: Subscription = new Subscription();
 
@@ -28,24 +26,24 @@ export class BodyKitsInfoComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-
     if (id) {
-      if (id) {
-        const bodyKitId = Number(id);
+      const bodyKitId = Number(id);
 
-        this.service.getBodyKitById(bodyKitId).subscribe({
-          next: (bodyKit) => {
-            if (bodyKit) {
-              this.bodyKit = bodyKit;
-            } else {
-              console.log('BodyKit no encontrado.');
-            }
-          },
-          error: (err) => {
-            console.error('Error al obtener el BodyKit:', err);
-          },
-        });
-      }
+      this.service.getBodyKitById(bodyKitId).subscribe({
+        next: (bodyKit) => {
+          if (bodyKit) {
+            this.bodyKit = bodyKit;
+            this.loading = false;
+          } else {
+            console.log('BodyKit no encontrado.');
+            this.loading = false;
+          }
+        },
+        error: (err) => {
+          console.error('Error al obtener el BodyKit:', err);
+          this.loading = false;
+        },
+      });
     }
   }
 

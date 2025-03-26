@@ -36,12 +36,15 @@ export class PartsInfoComponent implements OnInit, OnDestroy {
           next: (part) => {
             if (part) {
               this.part = part;
+              this.loading = false;
             } else {
               console.log('Part no encontrado');
+              this.loading = false;
             }
           },
           error: (err) => {
             console.error('Error al obtener la Part:', err);
+            this.loading = false;
           },
         });
       }

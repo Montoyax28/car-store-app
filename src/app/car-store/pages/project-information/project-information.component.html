@@ -1,0 +1,88 @@
+<div>
+  <ng-container *ngIf="loading; else SHOW_CONTENT">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+      <div
+        class="w-20 h-20 border-8 border-gray-300 border-t-black rounded-full animate-spin"
+      ></div>
+      <p class="mt-4 text-lg font-semibold text-gray-700">Loading...</p>
+    </div>
+  </ng-container>
+
+  <ng-template #SHOW_CONTENT>
+    <div class="w-full h-full flex flex-wrap justify-center items-center gap-5">
+      <ng-template [ngTemplateOutlet]="BANNER"></ng-template>
+    </div>
+
+    <div class="w-full h-full flex flex-wrap justify-center items-center gap-5">
+      <ng-template [ngTemplateOutlet]="CONTENT"></ng-template>
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #BANNER>
+  <ng-container>
+    <header class="banner">
+      <div class="slide">
+        <img
+          class="imageBanner"
+          src="../../../../assets/images/baners/C12.jpg"
+          alt="banner"
+        />
+      </div>
+
+      <div class="titleBanner">
+        <span class="text-white">Project Information</span>
+      </div>
+    </header>
+  </ng-container>
+</ng-template>
+
+<ng-template #CONTENT>
+  <ng-container>
+    <main class="container">
+      <div class="containerProject">
+        <span> <strong> Important </strong> </span>
+        <ol class="itemsContainer">
+          <li>
+            <p>
+              "This is a mockup of a virtual store developed by
+              <strong> Juan Esteban Montoya Uran </strong>, a front-end
+              developer, using the Angular framework along with TypeScript,
+              SCSS, and HTML. The images of the products and vehicles have been
+              taken from the web. It is important to note that I have no
+              affiliation with the official brands mentioned in this project."
+            </p>
+          </li>
+          <li class="items">
+            <a
+              href="https://github.com/Montoyax28"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button class="buttons">
+                <img
+                  src="../../../../assets/images/favicons/github_icon.png"
+                  alt="github"
+                  title="Github"
+                />
+              </button>
+            </a>
+            <a
+              href="https://co.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button class="buttons">
+                <img
+                  src="../../../../assets/images/favicons/linkedin_icon.png"
+                  alt="linkedin"
+                  title="Linkedin"
+                />
+              </button>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </main>
+  </ng-container>
+</ng-template>

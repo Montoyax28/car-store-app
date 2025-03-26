@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,8 +6,14 @@ import { Router } from '@angular/router';
   templateUrl: 'drag-racing.component.html',
   styleUrls: ['drag-racing.component.scss'],
 })
-export class DragRacingComponent {
+export class DragRacingComponent implements OnInit {
+  loading = true;
+
   constructor(private routes: Router) {}
+
+  ngOnInit(): void {
+    this.loading = false;
+  }
 
   goToDragRacingInfo(category: string) {
     this.routes.navigate(['/store/dragRacingInfo'], {

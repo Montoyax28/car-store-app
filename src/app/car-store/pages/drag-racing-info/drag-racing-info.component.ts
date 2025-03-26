@@ -12,6 +12,8 @@ export class DragRacingInfoComponent implements OnInit {
   currentIndex = 0;
   currentVideo: SafeResourceUrl = '';
 
+  loading = true;
+
   videoCategories: { [key: string]: string[] } = {
     toyotaSupra: [
       'https://www.youtube.com/embed/thgNDespy1Q?autoplay=1&controls=0&rel=0',
@@ -39,6 +41,7 @@ export class DragRacingInfoComponent implements OnInit {
         this.videoCategories[category] || this.videoCategories['toyotaSupra']; // Si no hay, usa la primera
       this.currentIndex = 0;
       this.currentVideo = this.sanitizeUrl(this.videos[this.currentIndex]);
+      this.loading = false;
     });
   }
 

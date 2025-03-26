@@ -1,50 +1,76 @@
-<div class="container">
-  <div class="containerForm">
-    <header class="headerForm">
-      <img
-        class="imageLogo"
-        src="../../../../assets/images/baners/monster_tunning_icon.jpg"
-        alt="Baner"
-      />
-    </header>
-    <form action="post" class="form">
-      <span class="seccion">Register</span>
-      <input type="text" name="fullname" id="fullname" placeholder="Fullname" />
-      <input type="email" name="email" id="email" placeholder="Email" />
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Password"
-      />
-      <button class="button w-full">Create account</button>
-      <span class="text-sm">Or register with</span>
-      <div class="buttonsContainer">
-        <button class="buttonsFoot">
-          <img
-            class="imageBrands"
-            src="../../../../assets/images/favicons/google_icon.png"
-            alt="google_icon"
-          />
-          <span>Google</span>
+<div>
+  <ng-container *ngIf="loading; else SHOW_CONTENT">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+      <div
+        class="w-20 h-20 border-8 border-gray-300 border-t-black rounded-full animate-spin"
+      ></div>
+      <p class="mt-4 text-lg font-semibold text-gray-700">Loading...</p>
+    </div>
+  </ng-container>
+
+  <ng-template #SHOW_CONTENT>
+    <div
+      class="w-full h-full flex flex-wrap justify-center items-center gap-5 p-10"
+    >
+      <ng-template [ngTemplateOutlet]="CONTENT"></ng-template>
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #CONTENT>
+  <ng-container class="container">
+    <div class="containerForm">
+      <header class="headerForm">
+        <img
+          class="imageLogo"
+          src="../../../../assets/images/baners/monster_tunning_icon.jpg"
+          alt="Baner"
+        />
+      </header>
+      <form action="post" class="form">
+        <span class="seccion">Register</span>
+        <input
+          type="text"
+          name="fullname"
+          id="fullname"
+          placeholder="Fullname"
+        />
+        <input type="email" name="email" id="email" placeholder="Email" />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+        />
+        <button class="button w-full">Create account</button>
+        <span class="text-sm">Or register with</span>
+        <div class="buttonsContainer">
+          <button class="buttonsFoot">
+            <img
+              class="imageBrands"
+              src="../../../../assets/images/favicons/google_icon.png"
+              alt="google_icon"
+            />
+            <span>Google</span>
+          </button>
+          <button class="buttonsFoot">
+            <img
+              class="imageBrands"
+              src="../../../../assets/images/favicons/apple_icon.png"
+              alt="apple_icon"
+            />
+            <span>Apple</span>
+          </button>
+        </div>
+      </form>
+      <div class="loginAccount">
+        <button (click)="goToLogin()">
+          <span>Have any account? <u>Sing in</u></span>
         </button>
-        <button class="buttonsFoot">
-          <img
-            class="imageBrands"
-            src="../../../../assets/images/favicons/apple_icon.png"
-            alt="apple_icon"
-          />
-          <span>Apple</span>
+        <button (click)="goToTermsAndConditions()">
+          <span><u>Terms & Conditions</u></span>
         </button>
       </div>
-    </form>
-    <div class="loginAccount">
-      <button (click)="goToLogin()">
-        <span>Have any account? <u>Sing in</u></span>
-      </button>
-      <button (click)="goToTermsAndConditions()">
-        <span><u>Terms & Conditions</u></span>
-      </button>
     </div>
-  </div>
-</div>
+  </ng-container>
+</ng-template>

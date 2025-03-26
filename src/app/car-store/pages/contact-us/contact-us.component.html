@@ -1,89 +1,126 @@
-<header class="banner">
-  <div class="slide">
-    <img
-      class="imageBanner"
-      src="../../../../assets/images/baners/C5.jpg"
-      alt="banner"
-    />
-  </div>
+<div>
+  <ng-container *ngIf="loading; else SHOW_CONTENT">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+      <div
+        class="w-20 h-20 border-8 border-gray-300 border-t-black rounded-full animate-spin"
+      ></div>
+      <p class="mt-4 text-lg font-semibold text-gray-700">Loading...</p>
+    </div>
+  </ng-container>
 
-  <div class="titleBanner">
-    <span class="text-white">Contact Us</span>
-  </div>
-</header>
-<main class="container">
-  <span class="text-3xl"> <strong> Monster Tunng </strong> </span>
-  <div class="containerText">
-    <span class="text"> <strong> NIT: 601 000 000 </strong> </span>
-    <span class="text">Av. Boyacá #80-94</span>
-    <span class="text">Bogotá, Colombia</span>
-    <br />
-    <span class="text"> +57 601 000 0000 </span>
-    <span class="text"> juanmontoyabms&#64;gmail.com </span>
-    <br />
-    <span class="text"> <strong> Showroom/Workshop Hours: </strong> </span>
-    <span class="text">Monday to Friday: 8:30 AM to 5:00 PM</span>
-    <span class="text">Saturday and Sunday: CLOSED</span>
-    <span class="text">
-      *Closed on public holidays unless otherwise specified.
-    </span>
-  </div>
-  <hr />
-  <div class="formContainer">
-    <span class="text-3xl"> <strong> Email Enquiry Form </strong> </span>
-    <form class="form" action="post" method="post" id="form">
-      <div class="formOption">
-        <span>First Name</span>
-        <input
-          type="text"
-          name="firstName"
-          id="firstName"
-          placeholder="First Name"
+  <ng-template #SHOW_CONTENT>
+    <div class="w-full h-full flex flex-wrap justify-center items-center gap-5">
+      <ng-template [ngTemplateOutlet]="BANNER"></ng-template>
+    </div>
+
+    <div
+      class="w-full h-full flex flex-wrap justify-center items-center gap-5 p-10"
+    >
+      <ng-template [ngTemplateOutlet]="CONTENT"></ng-template>
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #BANNER>
+  <ng-container>
+    <header class="banner">
+      <div class="slide">
+        <img
+          class="imageBanner"
+          src="../../../../assets/images/baners/C5.jpg"
+          alt="banner"
         />
       </div>
-      <div class="formOption">
-        <span>Surname</span>
-        <input type="text" name="surName" id="surName" placeholder="Surname" />
+
+      <div class="titleBanner">
+        <span class="text-white">Contact Us</span>
       </div>
-      <div class="formOption">
-        <span>Contact Phone Number</span>
-        <input
-          type="number"
-          name="contactPhoneNumber"
-          id="contactPhoneNumber"
-          placeholder="Contact Phone Number"
-        />
+    </header>
+  </ng-container>
+</ng-template>
+
+<ng-template #CONTENT>
+  <ng-container>
+    <main class="container">
+      <span class="text-3xl"> <strong> Monster Tunng </strong> </span>
+      <div class="containerText">
+        <span class="text"> <strong> NIT: 601 000 000 </strong> </span>
+        <span class="text">Av. Boyacá #80-94</span>
+        <span class="text">Bogotá, Colombia</span>
+        <br />
+        <span class="text"> +57 601 000 0000 </span>
+        <span class="text"> juanmontoyabms&#64;gmail.com </span>
+        <br />
+        <span class="text"> <strong> Showroom/Workshop Hours: </strong> </span>
+        <span class="text">Monday to Friday: 8:30 AM to 5:00 PM</span>
+        <span class="text">Saturday and Sunday: CLOSED</span>
+        <span class="text">
+          *Closed on public holidays unless otherwise specified.
+        </span>
       </div>
-      <div class="formOption">
-        <span>Email</span>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email Address"
-        />
+      <hr />
+      <div class="formContainer">
+        <span class="text-3xl"> <strong> Email Enquiry Form </strong> </span>
+        <form class="form" action="post" method="post" id="form">
+          <div class="formOption">
+            <span>First Name</span>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="First Name"
+            />
+          </div>
+          <div class="formOption">
+            <span>Surname</span>
+            <input
+              type="text"
+              name="surName"
+              id="surName"
+              placeholder="Surname"
+            />
+          </div>
+          <div class="formOption">
+            <span>Contact Phone Number</span>
+            <input
+              type="number"
+              name="contactPhoneNumber"
+              id="contactPhoneNumber"
+              placeholder="Contact Phone Number"
+            />
+          </div>
+          <div class="formOption">
+            <span>Email</span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email Address"
+            />
+          </div>
+          <div class="formOption">
+            <span>Preferred Method of Contact</span>
+            <select
+              class="rounded-lg pl-2"
+              [(ngModel)]="seleccionado"
+              name="contactTipe"
+            >
+              <option *ngFor="let opcion of opciones" [value]="opcion">
+                {{ opcion }}
+              </option>
+            </select>
+          </div>
+          <div class="formOption">
+            <span>Message</span>
+            <textarea
+              class="h-28 resize-none rounded-lg px-2"
+              name="message"
+              id="message"
+            ></textarea>
+          </div>
+          <button class="buttonForm">Send Email</button>
+        </form>
       </div>
-      <div class="formOption">
-        <span>Preferred Method of Contact</span>
-        <select
-          class="rounded-lg pl-2"
-          [(ngModel)]="seleccionado"
-          name="contactTipe"
-        >
-          <option *ngFor="let opcion of opciones" [value]="opcion">
-            {{ opcion }}
-          </option>
-        </select>
-      </div>
-      <div class="formOption">
-        <span>Message</span>
-        <textarea
-          class="h-28 resize-none rounded-lg px-2"
-          name="message"
-          id="message"
-        ></textarea>
-      </div>
-      <button class="buttonForm">Send Email</button>
-    </form>
-  </div>
-</main>
+    </main>
+  </ng-container>
+</ng-template>

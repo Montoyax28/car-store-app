@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-us.component.scss'],
 })
 export class ContactUsComponent implements OnInit {
-  seleccionado: string = ''; // Inicializar vacío para evitar errores
+  seleccionado: string = '';
   opciones: string[] = ['Email', 'Phone'];
 
+  loading = true;
+
   ngOnInit() {
-    this.seleccionado = this.opciones[0]; // Asignar el primer valor
+    this.loading = false;
+    this.seleccionado = this.opciones[0];
   }
 }

@@ -40,6 +40,10 @@ export class FooterComponent {
     this.router.navigate(['/store/privacyPolicy']);
   }
 
+  goToProjectInformation() {
+    this.router.navigate(['/store/projectInformation']);
+  }
+
   openPopUp() {
     this.isPopUpVisible = true;
   }

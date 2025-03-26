@@ -4,17 +4,17 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://run.mocky.io/v3/bc323252-ce7f-44c1-83a8-b727a11a4538',
+  baseUrl: 'https://run.mocky.io/v3/bc2ac860-f28f-41e3-aec8-0d3b8e7b6ccf',
 };
 
 export const enviromentBodyKits = {
   production: false,
-  baseUrl: 'https://run.mocky.io/v3/195c2ee1-f837-4206-b35f-f0fa8eb677e7',
+  baseUrl: 'https://run.mocky.io/v3/e3649c39-ecf0-4110-b816-ad2c6274818d',
 };
 
 export const enviromentParts = {
   production: false,
-  baseUrl: 'https://run.mocky.io/v3/dce4aa1d-6814-4779-b6b6-6ca5c33b1703',
+  baseUrl: 'https://run.mocky.io/v3/83e553dd-bf7c-435c-ba15-f114774186b0',
 };
 
 /*

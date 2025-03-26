@@ -11,7 +11,13 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
+  loading = true;
+
   constructor(private router: Router, private authS: AuthService) {}
+
+  ngOnInit() {
+    this.loading = false;
+  }
 
   login() {
     if (this.email && this.password) {
