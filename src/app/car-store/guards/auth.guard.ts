@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    if (this.isLoggedIn()) {
+    if (this.isAuthenticated()) {
       return true;
     } else {
       this.router.navigate(['/store/login']);
@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate {
     }
   }
 
-  private isLoggedIn(): boolean {
+  private isAuthenticated(): boolean {
     return !!localStorage.getItem('token');
   }
 }

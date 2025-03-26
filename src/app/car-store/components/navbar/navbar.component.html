@@ -20,6 +20,9 @@
       alt="icon"
     />
   </button>
+  <span class="text-sm absolute left-[105px]" *ngIf="userEmail"
+    >Bienvenido, {{ userEmail }}</span
+  >
   <nav class="w-full h-full flex justify-center items-center">
     <ul class="flex justify-center items-center gap-4">
       <li>
@@ -59,14 +62,14 @@
         alt="search"
       />
     </button>
-    <button (click)="goToLogin()">
+    <button *ngIf="!isAuthenticated" (click)="goToLogin()">
       <img
         src="../../../../assets/images/favicons/person_icon.svg"
         title="Login"
         alt="person"
       />
     </button>
-    <button (click)="goToSettings()">
+    <button *ngIf="isAuthenticated" (click)="goToSettings()">
       <img
         src="../../../../assets/images/favicons/settings_icon.svg"
         title="Settings"

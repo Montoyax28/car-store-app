@@ -55,8 +55,8 @@ export class CartComponent {
   removeFromCart(productId: number) {
     this.cartService.removeFromCart(productId);
     this.toast.showError(
-      'Producto Eliminado',
-      'El Producto fue eliminado del carrito'
+      'Product Removed',
+      'The product was removed from the cart'
     );
   }
 

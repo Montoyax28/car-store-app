@@ -1,15 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   mostrarInput = false;
+  userEmail: string | null = '';
+  isAuthenticated: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.userEmail = this.authService.getUserEmail();
+    this.isAuthenticated = this.authService.isAuthenticated();
+  }
+
+  ngDoCheck(): void {
+    this.userEmail = this.authService.getUserEmail();
+    this.isAuthenticated = this.authService.isAuthenticated();
+  }
 
   goToHome() {
     this.router.navigate(['/store/home']);

@@ -60,8 +60,8 @@ export class PartsInfoComponent implements OnInit, OnDestroy {
 
       this.CartS.addToCart(cartItem);
       this.toast.showSucess(
-        'Producto Agregado',
-        'El Producto fue agregado al carrito exitosamente.'
+        'Aggregate Product',
+        'The product was successfully added to the cart.'
       );
     } else {
       console.error('No se puede agregar un Part vacío al carrito.');

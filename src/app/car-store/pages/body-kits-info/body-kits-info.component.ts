@@ -13,7 +13,7 @@ import { NotifierService } from '../../services/notifier.service';
 })
 export class BodyKitsInfoComponent implements OnInit, OnDestroy {
   bodyKit?: bodyKit;
-  loading = true; // Inicia en true para mostrar la animación de carga
+  loading = true;
 
   private sub0: Subscription = new Subscription();
 
@@ -56,11 +56,11 @@ export class BodyKitsInfoComponent implements OnInit, OnDestroy {
 
       this.cartS.addToCart(cartItem);
       this.toast.showSucess(
-        'Producto Agregado',
-        'El Producto fue agregado al carrito exitosamente.'
+        'Aggregate Product',
+        'The product was successfully added to the cart.'
       );
     } else {
-      console.error('No se puede agregar un BodyKit vacío al carrito.');
+      console.error('An empty BodyKit cannot be added to the cart.');
     }
   }
 
