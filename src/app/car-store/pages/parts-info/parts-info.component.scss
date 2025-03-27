@@ -40,8 +40,10 @@
   height: 50px;
   border-radius: 10px;
   background-color: #b0b0b0;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .button:hover {
   background-color: #b9b9b9;
+  transform: scale(1.05);
 }

@@ -35,12 +35,12 @@ export class BodyKitsInfoComponent implements OnInit, OnDestroy {
             this.bodyKit = bodyKit;
             this.loading = false;
           } else {
-            console.log('BodyKit no encontrado.');
+            console.log('BodyKit not found.');
             this.loading = false;
           }
         },
         error: (err) => {
-          console.error('Error al obtener el BodyKit:', err);
+          console.error('Error getting BodyKit:', err);
           this.loading = false;
         },
       });

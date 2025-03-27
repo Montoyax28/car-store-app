@@ -33,11 +33,13 @@
   align-items: center;
   background-color: #b0b0b0;
   border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
   gap: 10px;
 }
 
 .button:hover {
   background-color: #b9b9b9;
+  transform: scale(1.05);
 }
 
 .buttonsContainer {
@@ -55,11 +57,13 @@
   align-items: center;
   background-color: #b0b0b0;
   border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
   gap: 10px;
 }
 
 .buttonsFoot:hover {
   background-color: #b9b9b9;
+  transform: scale(1.05);
 }
 
 .imageLogo {

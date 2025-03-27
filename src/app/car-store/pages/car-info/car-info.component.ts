@@ -31,12 +31,12 @@ export class CarInfoComponent implements OnInit, OnDestroy {
               this.car = car;
               this.loading = false;
             } else {
-              console.error('Carro no encontrado.');
+              console.error('Car not found.');
               this.loading = false;
             }
           },
           error: (err) => {
-            console.error('Error al obtener el carro:', err);
+            console.error('Error getting car:', err);
             this.loading = false;
           },
         });

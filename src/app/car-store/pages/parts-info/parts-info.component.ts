@@ -43,7 +43,7 @@ export class PartsInfoComponent implements OnInit, OnDestroy {
             }
           },
           error: (err) => {
-            console.error('Error al obtener la Part:', err);
+            console.error('Error getting Part:', err);
             this.loading = false;
           },
         });
@@ -64,7 +64,7 @@ export class PartsInfoComponent implements OnInit, OnDestroy {
         'The product was successfully added to the cart.'
       );
     } else {
-      console.error('No se puede agregar un Part vacío al carrito.');
+      console.error('An empty Part cannot be added to the cart.');
     }
   }
 

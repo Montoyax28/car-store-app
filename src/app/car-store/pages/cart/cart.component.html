@@ -50,14 +50,20 @@
           </td>
           <td>{{ product.price * product.quantity | currency }}</td>
           <td>
-            <button (click)="removeFromCart(product.id)">
+            <button
+              class="p-1 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+              (click)="removeFromCart(product.id)"
+            >
               <img
                 src="../../../../assets/images/favicons/remove_shopping_cart_icon.svg"
                 title="Remove Product"
                 alt="Remove"
               />
             </button>
-            <button (click)="goToProductInfo(product)">
+            <button
+              class="p-1 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+              (click)="goToProductInfo(product)"
+            >
               <img
                 src="../../../../assets/images/favicons/open_in_full_icon.svg"
                 title="Product Detail"
@@ -71,7 +77,7 @@
         <tr class="mt-3 gap-4">
           <td class="buttonContainerPay">
             <button
-              class="buttonPay"
+              class="buttonPay transition duration-300 hover:translate-x-1"
               [disabled]="isCartEmpty"
               (click)="goToPay()"
               title="Go to pay"

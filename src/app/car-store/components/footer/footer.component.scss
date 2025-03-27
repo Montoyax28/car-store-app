@@ -30,7 +30,12 @@ input {
   text-align: justify;
   font-size: x-small;
   align-items: center;
+  transition: background 0.3s, transform 0.2s;
   gap: 30px;
+}
+
+.buttons-footer:hover {
+  transform: scale(1.05);
 }
 
 .image-footer {
@@ -68,10 +73,12 @@ input {
 .buttonsCopyright {
   color: #b0b0b0;
   text-align: justify;
+  transition: transform 0.3s;
 }
 
 .buttonsCopyright:hover {
   color: #4f4f4f;
+  transform: translateX(4px);
 }
 
 .buttonSubs {

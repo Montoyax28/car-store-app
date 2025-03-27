@@ -54,14 +54,16 @@
   background-color: #e8e8e8;
 }
 
+.buttonPay {
+  width: 100%;
+  transition: transform 0.3s;
+}
+
 .buttonPay:hover {
   width: 100%;
   border-radius: 12px;
   background-color: #b9b9b9;
-}
-
-.buttonPay {
-  width: 100%;
+  transform: translateX(4px);
 }
 
 img {

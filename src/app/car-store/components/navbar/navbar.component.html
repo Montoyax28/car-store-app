@@ -24,8 +24,10 @@
     >Bienvenido, {{ userEmail }}</span
   >
   <nav class="w-full h-full flex justify-center items-center">
-    <ul class="flex justify-center items-center gap-4">
-      <li>
+    <ul class="flex justify-center items-center gap-2">
+      <li
+        class="p-2 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+      >
         <button (click)="goToHome()">
           <img
             src="../../../../assets/images/favicons/home_icon.svg"
@@ -34,16 +36,24 @@
           />
         </button>
       </li>
-      <li>
+      <li
+        class="p-2 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+      >
         <button (click)="goToTuningCars()">Tuning Cars</button>
       </li>
-      <li>
+      <li
+        class="p-2 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+      >
         <button (click)="goToBodyKits()">Body Kits</button>
       </li>
-      <li>
+      <li
+        class="p-2 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+      >
         <button (click)="goToParts()">Parts</button>
       </li>
-      <li>
+      <li
+        class="p-2 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+      >
         <button (click)="goToDragRacing()">Drag Racing</button>
       </li>
     </ul>
@@ -54,29 +64,43 @@
     type="text"
     placeholder="Search..."
   />
-  <div class="flex flex-row gap-5 pr-6">
-    <button (click)="toggleInput()">
+  <div class="flex flex-row gap-1 pr-6">
+    <button
+      class="p-2 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+      (click)="toggleInput()"
+    >
       <img
         src="../../../../assets/images/favicons/search_icon.svg"
         title="Search"
         alt="search"
       />
     </button>
-    <button *ngIf="!isAuthenticated" (click)="goToLogin()">
+    <button
+      class="p-2 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+      *ngIf="!isAuthenticated"
+      (click)="goToLogin()"
+    >
       <img
         src="../../../../assets/images/favicons/person_icon.svg"
         title="Login"
         alt="person"
       />
     </button>
-    <button *ngIf="isAuthenticated" (click)="goToSettings()">
+    <button
+      class="p-2 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+      *ngIf="isAuthenticated"
+      (click)="goToSettings()"
+    >
       <img
         src="../../../../assets/images/favicons/settings_icon.svg"
         title="Settings"
         alt="settings"
       />
     </button>
-    <button (click)="goToCart()">
+    <button
+      class="p-2 cursor-pointer rounded-xl transition duration-300 hover:translate-x-1"
+      (click)="goToCart()"
+    >
       <img
         src="../../../../assets/images/favicons/shopping_cart_checkout_icon.svg"
         title="Go to cart"
