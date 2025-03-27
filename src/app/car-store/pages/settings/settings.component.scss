@@ -1,107 +1,126 @@
+.settings-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* Contenedor Principal */
+.loading-container {
+  text-align: center;
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top-color: #b0b0b0;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .settings-container {
   display: flex;
-  width: 100%;
-  margin: auto;
-  border-radius: 12px;
+  width: 80%;
+  max-width: 1000px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-/* Barra lateral */
 .sidebar {
   width: 250px;
-  background: #e8e8e8;
-  color: white;
+  background-color: #f5f5f5;
   padding: 20px;
-  border-radius: 12px;
-  transition: all 0.3s;
+  h2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease-in-out;
+      &:hover {
+        background-color: #e0e0e0;
+      }
+      &.active {
+        background-color: #b9b9b9;
+      }
+    }
+  }
 }
 
-.sidebar h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar ul li {
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 12px;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.sidebar ul li:hover {
-  background-color: #b9b9b9;
-  transform: translateX(5px);
-}
-
-/* Contenido */
 .content {
   flex: 1;
   padding: 20px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  position: relative;
+  align-items: center;
 }
 
-/* Secciones de configuración */
 .settings-section {
-  background: white;
-  padding: 25px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 350px;
-  transition: opacity 0.4s, transform 0.4s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 10px;
 }
 
-/* Inputs y botones */
 .input-group {
   margin-bottom: 15px;
+  label {
+    font-weight: bold;
+    display: block;
+  }
+  input,
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    &:focus {
+      border-color: #0074e4;
+    }
+  }
 }
 
-label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
-}
-
-input, select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #BDC3C7;
-  border-radius: 4px;
-  transition: border-color 0.3s;
-}
-
-input:focus, select:focus {
-  border-color: #3498DB;
-}
-
-/* Botón de guardar */
 .btn-save {
   width: 100%;
   padding: 10px;
-  background-color:#b0b0b0;
-  color: white;
+  background-color: #0074e4;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s ease-in-out;
+  &:hover {
+    background-color: #005bb5;
+  }
 }
 
-.btn-save:hover {
-  background-color: #b9b9b9;
-  transform: scale(1.05);
-}
-
-/* Checkbox personalizado */
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+.btn-logout {
+  width: 100%;
+  padding: 10px;
+  background-color: #d9534f;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #c9302c;
+  }
 }

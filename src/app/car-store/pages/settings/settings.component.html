@@ -18,75 +18,73 @@
 </div>
 
 <ng-template #CONTENT>
-  <ng-container class="settings-container">
+  <div class="settings-container">
     <aside class="sidebar">
-      <h2>Options</h2>
+      <h2>Configuration</h2>
       <ul>
-        <li (click)="showSection('seguridad')">Seguridad</li>
-        <li (click)="showSection('notificaciones')">Notificaciones</li>
-        <li (click)="showSection('pagos')">Métodos de Pago</li>
-        <li (click)="showSection('privacidad')">Privacidad</li>
+        <li
+          *ngFor="let option of settingsOptions"
+          [class.active]="activeSection === option.key"
+          (click)="showSection(option.key)"
+        >
+          {{ option.icon }} {{ option.label }}
+        </li>
       </ul>
     </aside>
 
     <main class="content">
-      <section *ngIf="activeSection === 'seguridad'" class="settings-section">
-        <h2>Seguridad</h2>
+      <section *ngIf="activeSection === 'security'" class="settings-section">
+        <h2>Security</h2>
         <div class="input-group">
-          <label>Nueva Contraseña</label>
-          <input type="password" />
+          <label>New Password</label>
+          <input type="password" placeholder="Enter your new password" />
         </div>
         <div class="input-group">
-          <label>Confirmar Contraseña</label>
-          <input type="password" />
+          <label>Confirm Password</label>
+          <input type="password" placeholder="Confirm your new password" />
         </div>
-        <button class="btn-save">Actualizar Contraseña</button>
-        <button
-          (click)="logout()"
-          class="mt-4 bg-red-500 text-white px-4 py-2 rounded-md"
-        >
-          Cerrar sesión
-        </button>
+        <button class="btn-save">Update Password</button>
+        <button (click)="logout()" class="btn-logout">Log out</button>
       </section>
 
       <section
-        *ngIf="activeSection === 'notificaciones'"
+        *ngIf="activeSection === 'notifications'"
         class="settings-section"
       >
-        <h2>Notificaciones</h2>
+        <h2>Notifications</h2>
         <div class="checkbox-group">
-          <input type="checkbox" id="promo" class="w-0" />
-          <label for="promo">Recibir correos promocionales</label>
+          <input class="mr-2" type="checkbox" id="promo" />
+          <label for="promo">Receive promotional emails</label>
         </div>
         <div class="checkbox-group">
-          <input type="checkbox" id="security" class="w-0" />
-          <label for="security">Alertas de seguridad</label>
+          <input class="mr-2" type="checkbox" id="security" />
+          <label for="security">Security alerts</label>
         </div>
-        <button class="btn-save">Guardar Preferencias</button>
+        <button class="btn-save">Save Preferences</button>
       </section>
 
-      <section *ngIf="activeSection === 'pagos'" class="settings-section">
-        <h2>Métodos de Pago</h2>
+      <section *ngIf="activeSection === 'payments'" class="settings-section">
+        <h2>Payment Methods</h2>
         <div class="input-group">
-          <label>Método Predeterminado</label>
+          <label>Default Method</label>
           <select>
             <option>Visa</option>
             <option>PayPal</option>
             <option>MasterCard</option>
           </select>
         </div>
-        <button class="btn-save">Actualizar Método</button>
+        <button class="btn-save">Update Method</button>
       </section>
 
-      <section *ngIf="activeSection === 'privacidad'" class="settings-section">
-        <h2>Privacidad</h2>
-        <p>Controla tu privacidad y los datos compartidos.</p>
+      <section *ngIf="activeSection === 'privacy'" class="settings-section">
+        <h2>Privacy</h2>
+        <p>Control your privacy and shared data.</p>
         <div class="checkbox-group">
-          <input type="checkbox" id="tracking" />
-          <label for="tracking">Permitir seguimiento de actividad</label>
+          <input class="mr-2" type="checkbox" id="tracking" />
+          <label for="tracking">Allow activity tracking</label>
         </div>
-        <button class="btn-save">Guardar Configuración</button>
+        <button class="btn-save">Save Settings</button>
       </section>
     </main>
-  </ng-container>
+  </div>
 </ng-template>
