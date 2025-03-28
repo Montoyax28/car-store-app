@@ -1,9 +1,7 @@
 <div>
   <ng-container *ngIf="loading; else SHOW_CONTENT">
     <div class="flex flex-col items-center justify-center min-h-screen">
-      <div
-        class="w-20 h-20 border-8 border-gray-300 border-t-black rounded-full animate-spin"
-      ></div>
+      <div class="w-20 h-20 border-8 border-gray-300 border-t-black rounded-full animate-spin"></div>
       <p class="mt-4 text-lg font-semibold text-gray-700">Loading...</p>
     </div>
   </ng-container>
@@ -23,8 +21,9 @@
       </picture>
       <div class="containerInfo">
         <h1 class="text-2xl font-bold">{{ car.name }}</h1>
-        <h1>Parts</h1>
+        <h2 class="text-lg font-semibold">Parts</h2>
         <p>{{ car.parts }}</p>
+        <!-- Puedes descomentar los siguientes párrafos si quieres mostrar más detalles -->
         <!-- <p class="text-lg">Marca: {{ car.brand }}</p>
         <p class="text-lg">Modelo: {{ car.model }}</p>
         <p class="text-lg">Año: {{ car.year }}</p>

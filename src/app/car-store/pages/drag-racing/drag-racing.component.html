@@ -1,9 +1,7 @@
 <div>
   <ng-container *ngIf="loading; else SHOW_CONTENT">
     <div class="flex flex-col items-center justify-center min-h-screen">
-      <div
-        class="w-20 h-20 border-8 border-gray-300 border-t-black rounded-full animate-spin"
-      ></div>
+      <div class="w-20 h-20 border-8 border-gray-300 border-t-black rounded-full animate-spin"></div>
       <p class="mt-4 text-lg font-semibold text-gray-700">Loading...</p>
     </div>
   </ng-container>
@@ -13,9 +11,7 @@
       <ng-template [ngTemplateOutlet]="BANNER"></ng-template>
     </div>
 
-    <div
-      class="w-full h-full flex flex-wrap justify-center items-center gap-5 p-10"
-    >
+    <div class="w-full h-full flex flex-wrap justify-center items-center gap-5 p-10">
       <ng-template [ngTemplateOutlet]="CONTENT"></ng-template>
     </div>
   </ng-template>
@@ -24,11 +20,7 @@
 <ng-template #BANNER>
   <header class="banner">
     <div class="slide">
-      <img
-        class="imageBanner"
-        src="../../../../assets/images/baners/B14.jpg"
-        alt="banner"
-      />
+      <img class="imageBanner" src="../../../../assets/images/baners/B14.jpg" alt="banner" />
     </div>
 
     <div class="titleBanner">
@@ -40,43 +32,37 @@
 <ng-template #CONTENT>
   <ng-container class="container">
     <main class="main">
-      <div class="containerCar shadow-black group">
-        <button
-          class="buttonCar transition-transform duration-300 group-hover:scale-[1.3]"
-          (click)="goToDragRacingInfo('toyotaSupra')"
-        >
-          <img
-            src="../../../../assets/images/baners/Toyota-Supra-MkIV.jpg"
-            alt="toyotaSupra"
-          />
-          <span><strong>Toyota Supra MK4 2JZ-GE</strong></span>
-          <span><strong>(2002)</strong></span>
+      <div class="containerCar">
+        <button class="buttonCar" (click)="goToDragRacingInfo('toyotaSupra')">
+          <div class="imageContainer">
+            <img src="../../../../assets/images/baners/Toyota-Supra-MkIV.jpg" alt="toyotaSupra" />
+          </div>
+          <div class="infoCar">
+            <span class="carName"><strong>Toyota Supra MK4 2JZ-GE</strong></span>
+            <span class="carYear"><strong>(2002)</strong></span>
+          </div>
         </button>
       </div>
-      <div class="containerCar shadow-black group">
-        <button
-          class="buttonCar transition-transform duration-300 group-hover:scale-[1.3]"
-          (click)="goToDragRacingInfo('nissanSkyline')"
-        >
-          <img
-            src="../../../../assets/images/baners/MINES_BNR34_N1.jpg"
-            alt="nissanSkyline"
-          />
-          <span><strong>Nissan Skyline GT-R BNR34 N1</strong></span>
-          <span><strong>(1999)</strong></span>
+      <div class="containerCar">
+        <button class="buttonCar" (click)="goToDragRacingInfo('nissanSkyline')">
+          <div class="imageContainer">
+            <img src="../../../../assets/images/baners/MINES_BNR34_N1.jpg" alt="nissanSkyline" />
+          </div>
+          <div class="infoCar">
+            <span class="carName"><strong>Nissan Skyline GT-R BNR34 N1</strong></span>
+            <span class="carYear"><strong>(1999)</strong></span>
+          </div>
         </button>
       </div>
-      <div class="containerCar shadow-black group">
-        <button
-          class="buttonCar transition-transform duration-300 group-hover:scale-[1.3]"
-          (click)="goToDragRacingInfo('mitsubishiLancer')"
-        >
-          <img
-            src="../../../../assets/images/baners/mitsubishi-lancer-evolution-ix-1.jpg"
-            alt="mitsubishiLancer"
-          />
-          <span><strong>Mitsubishi Lancer Evolution IX</strong></span>
-          <span><strong>(2006)</strong></span>
+      <div class="containerCar">
+        <button class="buttonCar" (click)="goToDragRacingInfo('mitsubishiLancer')">
+          <div class="imageContainer">
+            <img src="../../../../assets/images/baners/mitsubishi-lancer-evolution-ix-1.jpg" alt="mitsubishiLancer" />
+          </div>
+          <div class="infoCar">
+            <span class="carName"><strong>Mitsubishi Lancer Evolution IX</strong></span>
+            <span class="carYear"><strong>(2006)</strong></span>
+          </div>
         </button>
       </div>
     </main>

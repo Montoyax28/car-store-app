@@ -1,27 +1,27 @@
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.container {
-  height: 100vh;
+body {
+  font-family: 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #fff;
+  overflow-x: hidden;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10px;
-  background-color: #ffffff;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .banner {
   display: flex;
   width: 100%;
-  height: 254px;
+  height: 250px;
   flex-direction: column;
   position: relative;
   justify-content: center;
+  background-color: #111;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .slide {
@@ -31,40 +31,115 @@ img {
 }
 
 .imageBanner {
-  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%) contrast(150%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.banner:hover .imageBanner {
+  filter: brightness(100%) contrast(180%);
 }
 
 .titleBanner {
   display: flex;
-  height: 100%;
   justify-content: center;
   align-items: center;
-  font-size: xxx-large;
-  background-color: #bababa86;
-  z-index: 5;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00ff99;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  text-shadow: 0 0 15px rgba(0, 255, 153, 1);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .main {
-  width: 100%;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 28px;
-}
-
-.containerCar{
-  width: 450px;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 10px;
-  gap: 20px;
-}
-
-.buttonCar{
+  gap: 30px;
   width: 100%;
-  border-radius: 12px;
-  z-index: 10;
+  padding: 20px;
 }
 
+.containerCar {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.containerCar:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 2px solid #00ff99;
+  transition: transform 0.3s ease;
+}
+
+.containerCar:hover .imageContainer img {
+  transform: scale(1.05);
+}
+
+.infoCar {
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.carName {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #00ff99;
+}
+
+.carYear {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .containerCar img {
+    height: 200px;
+  }
+
+  .titleBanner {
+    font-size: 2rem;
+  }
+}
