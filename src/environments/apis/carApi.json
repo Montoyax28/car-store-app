@@ -1,0 +1,122 @@
+[
+  {
+      "id": 1,
+      "name": "Nissan Skyline GT-R R34",
+      "image": "https://www.vspecperformance.com.au/assets/full/BNR34_TOPSECRET.jpg?20210928132908",
+      "parts": ["Turbo mejorado", "Escape deportivo", "Suspensión ajustable", "ECU programada"]
+  },
+  {
+      "id": 2,
+      "name": "Toyota Supra MK4",
+      "image": "https://cdn.bhdw.net/im/tuning-toyota-supra-wallpaper-82195_w635.webp",
+      "parts": ["Bodykit aerodinámico", "Turbo de alto rendimiento", "Llantas forjadas", "Interior de fibra de carbono"]
+  },
+  {
+      "id": 3,
+      "name": "Mazda RX-7 FD3S",
+      "image": "https://images.pexels.com/photos/9070626/pexels-photo-9070626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "parts": ["Puertos del motor extendidos", "Escape de titanio", "Diferencial de deslizamiento limitado", "Sistema de admisión mejorado"]
+  },
+  {
+      "id": 4,
+      "name": "Honda NSX NA1",
+      "image": "https://img-new.cgtrader.com/items/4611810/24f5aa9695/large/honda-nsx-na1-tuning-version-3d-model-24f5aa9695.jpg",
+      "parts": ["Suspensión de competición", "ECU remapeada", "Alas aerodinámicas", "Sistema de escape en Inconel"]
+  },
+  {
+      "id": 5,
+      "name": "Subaru Impreza WRX STI",
+      "image": "https://images.topgear.com.ph/topgear/images/2020/10/13/subaru-wrx-sti-1-1602552640.jpg",
+      "parts": ["Intercooler de alto rendimiento", "Suspensión coilover", "Frenos Brembo", "Llantas doradas de rally"]
+  },
+  {
+      "id": 6,
+      "name": "Mitsubishi Lancer Evolution IX",
+      "image": "https://stanceauto.co.uk/uploads/images/202307/image_870x_64a3fb419323f.webp",
+      "parts": ["Diferencial activo", "Turbo twin-scroll", "Alerón de fibra de carbono", "Sistema de inyección de agua/metanol"]
+  },
+  {
+      "id": 7,
+      "name": "Toyota Chaser JZX100",
+      "image": "https://cdn.dealeraccelerate.com/driver/1/446/16782/1920x1440/1996-toyota-chaser-tourer-v-jzx100",
+      "parts": ["Motor 1JZ-GTE mejorado", "Escape de flujo libre", "Diferencial LSD", "Bodykit personalizado"]
+  },
+  {
+      "id": 8,
+      "name": "Nissan Silvia S15",
+      "image": "https://imgx.gridoto.com/crop/0x28:1080x745/700x465/photo/2021/04/22/174861873_467310274589527_725703-20210422111515.jpg",
+      "parts": ["Turbo de gran tamaño", "Sistema de suspensión ajustable", "Bodykit Rocket Bunny", "Frenos de alto rendimiento"]
+  },
+  {
+      "id": 9,
+      "name": "Mazda Miata MX-5 NA",
+      "image": "https://i.pinimg.com/originals/cd/1d/d4/cd1dd41782788aeba507802b67939a3b.jpg",
+      "parts": ["Suspensión rebajada", "Escape deportivo", "Motor turboalimentado", "Hardtop de fibra de carbono"]
+  },
+  {
+      "id": 10,
+      "name": "Lexus IS300",
+      "image": "https://www.pasmag.com/images/2021/09/28/2021-PASMAG-Lexus-IS300-Farid-Nurmohamed-001_large.jpg",
+      "parts": ["Motor 2JZ-GE con turbo", "Escape HKS", "Suspensión BC Racing", "Interior en Alcantara"]
+  },
+  {
+    "id": 11,
+    "name": "Honda Integra Type-R DC2",
+    "image": "https://www.vspecperformance.com.au/assets/full/00_DC2_TYPER.jpg?20211123093737",
+    "parts": ["Suspensión rebajada", "Escape deportivo","Transmission 5-Speed Manual", "Motor 1.8L B18C"]
+  },
+  {
+    "id": 12,
+    "name": "Nissan Skyline GT-R BNR34 N1",
+    "image": "https://www.vspecperformance.com.au/assets/full/MINES_BNR34_N1.jpg?20210928132908",
+    "parts": ["Suspensión rebajada", "Escape deportivo","Transmission 6-Speed Manual", "Motor 2.8L RB26DETT"]
+  },
+  {
+    "id": 13,
+    "name": "Mazda RX-7 R2 (FD3S) by RE-Amemiya",
+    "image": "https://www.vspecperformance.com.au/assets/full/R2_93_RX7.jpg?20210928132908",
+    "parts": ["Motor 1.3L 13B 2-Rotor con turbo", "Escape HKS", "Suspensión BC Racing", "Interior en Alcantara", "Transmission 5-Speed Manual"]
+  },
+  {
+    "id": 14,
+    "name": "Honda NSX",
+    "image": "https://www.vspecperformance.com.au/assets/full/2016_NSX.jpg?20210928132908",
+    "parts": ["Motor 3.5L V6 Hybrid Turbo", "Escape de flujo libre", "Diferencial LSD", "Transmission 7-Speed Semi Automatic"]
+  },
+  {
+    "id": 15,
+    "name": "Honda NSX NA2",
+    "image": "https://www.vspecperformance.com.au/assets/full/1086.jpg?20210928132908",
+    "parts": ["Motor 3.2L V6 C32B","Transmission 6-Speed Manual","Bodykit aerodinámico", "Turbo de alto rendimiento", "Llantas forjadas", "Interior de fibra de carbono"]
+  },
+  {
+    "id": 16,
+    "name": "Nismo GT-R SV (R35)",
+    "image": "https://www.vspecperformance.com.au/assets/full/22_NISMO_SV.jpg?20211123093737",
+    "parts": ["Motor 3.8L Twin Turbo V6 (VR38DETT)","Transmission 6-Speed Automatic","Suspensión rebajada", "Escape deportivo"]
+  },
+  {
+    "id": 17,
+    "name": "Nismo 400R",
+    "image": "https://www.vspecperformance.com.au/assets/full/400R_MNP.jpg?20210928132908",
+    "parts": ["Motor 2.7L RB-X RB Engine","Transmission 5-Speed Manual","Turbo mejorado", "Escape deportivo", "Suspensión ajustable", "ECU programada"]
+  },
+  {
+    "id": 18,
+    "name": "Honda NSX NA1",
+    "image": "https://www.vspecperformance.com.au/assets/full/1_NSX_NA1_91.jpg?20211123093737",
+    "parts": ["Motor 3.0L C30A V6","Transmission 6-Speed Manual","Suspensión rebajada", "Escape deportivo", "Motor turboalimentado", "Hardtop de fibra de carbono" ]
+  },
+  {
+    "id": 19,
+    "name": "Mitsubishi Lancer Evolution 6.5 TME GSR",
+    "image": "https://www.vspecperformance.com.au/assets/full/TME_65_EVO.jpg?20210928132908",
+    "parts": ["Motor 2.0L Turbo","Transmission 5-Speed Manual","Turbo de gran tamaño", "Sistema de suspensión ajustable", "Bodykit Rocket Bunny", "Frenos de alto rendimiento"]
+  },
+  {
+    "id": 20,
+    "name": "Toyota GR Supra (A90)",
+    "image": "https://www.vspecperformance.com.au/assets/full/2020_A90_SUPRA.jpg?20211123093737",
+    "parts": ["Motor 3.0L B58", "Transmission 8-Speed Automatic","Diferencial activo", "Turbo twin-scroll", "Alerón de fibra de carbono", "Sistema de inyección de agua/metanol"]
+  }
+]
